@@ -16,6 +16,9 @@ Consigli del giorno:
 
 // 1. Creo un array di 5 numeri casuali
 let rdmNum = [];
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 function rdmN(randomNumber) {
   while (rdmNum.length < 5) {
     let num = randomNumber(0, 100);
@@ -27,13 +30,14 @@ function rdmN(randomNumber) {
 rdmN(randomNumber);
 console.log(rdmNum);
 
-function randomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-// 2. Creo timer/*
-/* let timer = 10; */
-
-/* const countdown = setinterval(function () {}, 1000); */
+// 2. Creo timer
+let timer = 10;
+let countdownElement = document.getElementById("countdown");
+setInterval(() => {
+  if (timer > 0) {
+    countdownElement.innerHTML = timer--;
+  } else clearInterval(timer);
+}, 1000);
 
 // 3. Dopo 30 secondi i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente, nell'ordine che preferisce.
 /* !rdmNum.classlist.add("hidden");

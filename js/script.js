@@ -16,5 +16,34 @@ Consigli del giorno:
 
 // 1. Creo un array di 5 numeri casuali
 let rdmNum = [];
-// 2. Creo timer
-let timer = 10;
+function rdmN(randomNumber) {
+  let i = 0;
+  while (i < 5) {
+    let num = randomNumber(0, 100);
+    rdmNum.push(num);
+    i++;
+  }
+}
+/* rdmN(randomNumber);
+console.log(rdmNum); */
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+// 2. Creo timer/*
+/* let timer = 10; */
+
+/* const countdown = setinterval(function () {}, 1000); */
+
+// 3. Dopo 30 secondi i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente, nell'ordine che preferisce.
+/* !rdmNum.classlist.add("hidden");
+const input = document.querySelectorAll("input");
+input.classlist.add("visible"); */
+
+//4. Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+/* const userNum = [];
+const result = document.querySelector(".result"); */
+
+//5.se l'utente mette due numeri uguali o inserisce cose diverse da numeri lo blocchiamo in qualche modo.
+
+//6.Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel form.

@@ -17,15 +17,15 @@ Consigli del giorno:
 // 1. Creo un array di 5 numeri casuali
 let rdmNum = [];
 function rdmN(randomNumber) {
-  let i = 0;
-  while (i < 5) {
+  while (rdmNum.length < 5) {
     let num = randomNumber(0, 100);
-    rdmNum.push(num);
-    i++;
+    if (!rdmNum.includes(num)) {
+      rdmNum.push(num);
+    }
   }
 }
-/* rdmN(randomNumber);
-console.log(rdmNum); */
+rdmN(randomNumber);
+console.log(rdmNum);
 
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;

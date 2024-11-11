@@ -16,33 +16,45 @@ Consigli del giorno:
 
 // 1. Creo un array di 5 numeri casuali
 let rdmNum = [];
+let numberElement = document.getElementById("numbers-list");
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function rdmN(randomNumber) {
+function rdmN() {
   while (rdmNum.length < 5) {
     let num = randomNumber(0, 100);
     if (!rdmNum.includes(num)) {
       rdmNum.push(num);
     }
   }
+  showNum();
 }
-rdmN(randomNumber);
-console.log(rdmNum);
 
+let showNum = () => {
+  for (let i = 0; i < rdmNum.length; i++) {
+    let elementNumbers = document.createElement("li");
+    elementNumbers.innerHTML = rdmNum[i];
+    numberElement.appendChild(elementNumbers);
+  }
+};
+rdmN();
 // 2. Creo timer
 let timer = 10;
 let countdownElement = document.getElementById("countdown");
-setInterval(() => {
+let intervalId = setInterval(() => {
   if (timer > 0) {
     countdownElement.innerHTML = timer--;
-  } else clearInterval(timer);
+  } else {
+    numberElement.classList.toggle("hidden");
+
+    const formElement = document.getElementById("answers-form");
+    formElement.classList.toggle("d-none");
+
+    clearInterval(intervalId);
+  }
 }, 1000);
 
 // 3. Dopo 30 secondi i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente, nell'ordine che preferisce.
-/* !rdmNum.classlist.add("hidden");
-const input = document.querySelectorAll("input");
-input.classlist.add("visible"); */
 
 //4. Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 /* const userNum = [];

@@ -65,7 +65,6 @@ function onSubmitClick(event) {
   let prova = document.createElement("p");
   prova.innerHTML = `hai indovinato ${userNum.length} numeri, i numeri indovinati sono: ${userNum}`;
   form.appendChild(prova);
-  prova = document.classList.add("texr-center");
 
   /* let print = document.getElementById("message");
   print.innerHTML = `hai indovinato ${userNum.length} numeri, i numeri indovinati sono: ${userNum}`; */
